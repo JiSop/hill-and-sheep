@@ -1,4 +1,5 @@
 import Hill from './components/Hill.js';
+import SheepController from './components/SheepController.js';
 
 class App {
   constructor() {
@@ -11,6 +12,7 @@ class App {
       new Hill('#ff59c2', 0.5, 8),
       new Hill('#ff4674', 1.4, 6),
     ];
+    this.sheepController = new SheepController();
 
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
@@ -30,17 +32,21 @@ class App {
     for (let i = 0; i < this.hills.length; i++) {
       this.hills[i].resize(this.stageWidth, this.stageHeight);
     }
+    // SheepController resize
+    this.sheepController.resize(this.stageWidth, this.stageHeight);
   }
 
-  animate() {
+  animate(t) {
     requestAnimationFrame(this.animate.bind(this));
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
-    // Hill animate
+    // Hill draw
     let dots;
     for (let i = 0; i < this.hills.length; i++) {
       dots = this.hills[i].draw(this.ctx);
     }
+    // SheepController draw
+    this.sheepController.draw(this.ctx, t, dots);
   }
 }
 
