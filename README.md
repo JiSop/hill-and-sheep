@@ -2,7 +2,7 @@
 
 ![sheep](src/asset/hill-and-sheep.gif)
 
-Interactive Developer [언덕을 넘는 양들](https://youtu.be/hCHL7sydzn0) 클론 코딩
+Interactive Developer [언덕을 넘는 양들](https://youtu.be/hCHL7sydzn0) 클론
 
 
 

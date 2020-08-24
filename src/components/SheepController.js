@@ -1,4 +1,5 @@
 import Sheep from './Sheep.js';
+import sheepImg from '../asset/sheep.png';
 
 export default class SheepController {
   constructor() {
@@ -7,7 +8,7 @@ export default class SheepController {
     this.img.onload = () => {
       this.loaded();
     };
-    this.img.src = 'asset/sheep.png';
+    this.img.src = sheepImg;
 
     this.items = [];
 
